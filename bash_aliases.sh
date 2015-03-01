@@ -21,8 +21,8 @@ __set_ls_aliases ()
 	    #alias vdir='vdir --color=auto'
 
 	    alias ll='ls -alF'
-		alias la='ls -A'
-		alias l='ls -CF'
+			alias la='ls -A'
+			alias l='ls -CF'
 
 	    alias grep='grep --color=auto'
 	    alias fgrep='fgrep --color=auto'
@@ -73,5 +73,8 @@ __set_apt_aliases ()
 __set_ls_aliases
 __set_apt_aliases
 
-__print_apt_shortcuts_info
+calc () {
+    bc -l <<< "$@"
+}
 
+# __print_apt_shortcuts_info

@@ -10,10 +10,10 @@
 
 __print_line ()
 {
-    local line="--------------------------------------------------------------------------------"
-    
-    printf "${GREY}"
-    __print_centered_string "$line" "0"
+    # local line="--------------------------------------------------------------------------------"
+
+    # printf "${GREY}"
+    # __print_centered_string "$line" "0"
     printf "\n"
 }
 
@@ -65,6 +65,6 @@ __print_fixed_singleline ()
     local c_string="$1"
     local mid=$(((strlen+$COLUMNS)/2))
     local leftspace=$((${mid}-strlen))
-    
+
     printf "%-*s%s\n" $leftspace " " "$c_string"
 }

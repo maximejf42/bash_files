@@ -10,8 +10,9 @@ function parse_git_dirty() {
 }
 
 function parse_git_branch() {
+  # git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-PS1="\[$GREY\]\t\n\[$RED\]\u\[$GREY\]@\[$ORANGE\]\h \[$YELLOW\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\] \[$RESET\]"
-
+# PS1="\[$GREY\]\t\n\[$RED\]\u\[$GREY\]@\[$ORANGE\]\h \[$YELLOW\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\] \[$RESET\]"
+PS1="\[$GREEN\]\[$BOLD\]\u@\h \[$MAGENTA\]\w\[$BLUE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\$(parse_git_branch) \[$WHITE\]$ "
