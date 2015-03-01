@@ -53,6 +53,20 @@ __print_diskinfo ()
     __print_line
 }
 
+__print_uptime ()
+{
+    # LAST_LOGINS=$(last -in 3 -ad)
+    # printf "%s\n" "$LAST_LOGINS" | boxes -d ada-box -ph8v1
+    local UPTIME=$(uptime)
+    #local linecount=$(printf "%s\n" "$LAST_LOGINS" | grep -c '^')
+
+    printf ${GREY}
+    __print_centered_multiline "$UPTIME" "0"
+
+    printf "${NORMAL}\n"
+    __print_line
+}
+
 __print_lastlogins ()
 {
     # LAST_LOGINS=$(last -in 3 -ad)
@@ -76,5 +90,7 @@ __print_hostname
 __print_sysinfo
 
 __print_diskinfo
+
+__print_uptime
 
 # __print_lastlogins

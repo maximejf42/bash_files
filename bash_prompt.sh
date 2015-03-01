@@ -15,4 +15,4 @@ function parse_git_branch() {
 }
 
 # PS1="\[$GREY\]\t\n\[$RED\]\u\[$GREY\]@\[$ORANGE\]\h \[$YELLOW\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\] \[$RESET\]"
-PS1="\[$GREEN\]\[$BOLD\]\u@\h \[$MAGENTA\]\w\[$BLUE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\$(parse_git_branch) \[$WHITE\]$ "
+PS1="\[$GREEN\]\[$BOLD\]\u@\h \[$BLUE\]\w\[$NORMAL\]\[$MAGENTA\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\$(parse_git_branch) \[$WHITE\]$ "
